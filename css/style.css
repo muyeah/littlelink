@@ -1,382 +1,213 @@
-/*
-* LittleLink
-* https://littlelink.io
-* Free to use under the MIT license
-* http://www.opensource.org/licenses/mit-license.php
-*/
-
-/* Base Typography Settings
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
+/* Custom layout inspired by the reference mock */
 :root {
-	font-size:16px;
+  --bg: #0d202f;
+  --pill: #1c3246;
+  --pill-border: #2c475d;
+  --pill-highlight: rgba(255, 255, 255, 0.08);
+  --text: #dfe9f7;
+  --muted: #96a9bd;
+  --accent: #c7d7e7;
+  --shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
+  --radius-pill: 999px;
+  --spacing-xs: 0.35rem;
+  --spacing-s: 0.7rem;
+  --spacing-m: 1.05rem;
+  --spacing-l: 1.6rem;
+  --spacing-xl: 2.2rem;
 }
 
-/* Grid
-  –––––––––––––––––––––––––––––––––––––––––––––––––– */
-  .container {
-	position:relative;
-	width:100%;
-	max-width:37.5rem;     				/* 600px */
-    text-align:center;
-	margin:0 auto;
-	padding:3rem 1.25rem 0 1.25rem;
-	box-sizing:border-box;
-}
-.container-left {
-	position:relative;
-	width:100%;
-	max-width:37.5rem;
-	text-align:left;
-	margin:0 auto;
-	padding:0 1.25rem;
-	box-sizing:border-box;
-}
-.container-left p {
-	margin-bottom: 1rem;  				/* 16px space between paragraphs */
-  }
-.column {
-	position:center;
-	width:100%;
-	float:center;
-	box-sizing:border-box;
-}
-/* For devices larger than 400px */
-  @media (min-width:25rem) {            /* 400px */
-    .container {
-	width:85%;
-	padding-left:0;
-	padding-right:0;
-}
-}/* For devices larger than 550px */
-  @media (min-width:34.375rem) {        /* 550px */
-    .container {
-	width:80%;
-}
-.column,.columns {
-	margin-left:0;
-}
-.column:first-child,.columns:first-child {
-	margin-left:0;
-}
+* {
+  box-sizing: border-box;
 }
 
-/* Base Styles
-  –––––––––––––––––––––––––––––––––––––––––––––––––– */
-  body {
-	margin:0;
-	padding:0;
-	background-color:#ffffff;
-	color:#1a1a1a;
-	font-family:"Open Sans",system-ui;
-	font-size:1.125rem;     				/* 18px */
-    font-weight:400;
-	line-height:1.6;
-}
-
-/* Typography
-  –––––––––––––––––––––––––––––––––––––––––––––––––– */
-  h1 {
-	margin:0 0 0.5rem 0;
-	font-size:3rem;         		/* 48px */
-    font-weight:800;
-	line-height:1;
-	letter-spacing:0;
-	word-wrap:break-word;
-	overflow-wrap:break-word;
-	hyphens:auto;           		/* Delete this to remove automatic hyphen on line break */
-}
-.container p {
-	margin:0 0 2rem 0;
-}
-
-/* Base Typography Settings
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
-/* Base size - 16px browser default */
-:root {
-  font-size:16px;           /* Using a 1.25 modular scale for typography */
-  --scale-0:1rem;           /* 16px */
-  --scale-1:1.25rem;        /* 20px */
-  --scale-2:1.563rem;       /* 25px */
-  --scale-3:1.953rem;       /* 31px */
-  --scale-4:2.441rem;       /* 39px */
-  --scale-5:3.052rem;       /* 49px */
-
-  /* Spacing units */
-  --spacing-xs:0.5rem;      /* 8px */
-  --spacing-s:1rem;         /* 16px */
-  --spacing-m:1.5rem;       /* 24px */
-  --spacing-l:2rem;         /* 32px */
-  --spacing-xl:3rem;        /* 48px */
-  --spacing-xxl:4rem;       /* 64px */
-}
-
-/* Avatar */
-.avatar {
-	width: 8rem;             /* 128px */
-	height: 8rem;
-	border-radius: 50%;
-	object-fit: cover;
-	background-position: center;
-	margin-bottom: var(--spacing-l);
-	margin-left: auto;
-	margin-right: auto;
-	display: block;
-  }
-
-/* Typography Scale */
-h1 {
-	margin:0 0 var(--spacing-m) 0;
-	font-size:var(--scale-5);           /* ~49px */
-  	font-weight:800;
-	line-height:1.1;
-	letter-spacing:-0.02em;
-	word-wrap:break-word;
-	overflow-wrap:break-word;
-}
 body {
-	font-size:var(--scale-1);           /* 20px */
-  	line-height:1.6;
-}
-.container p {
-	margin:0 0 var(--spacing-xl) 0;
-	font-size:var(--scale-1);
-	line-height:1.6;
-}
-
-/* Container spacing */
-.container {
-	padding:var(--spacing-xl) var(--spacing-m) 0 var(--spacing-m);
-	text-align:center;
+  margin: 0;
+  font-family: "Inter", "Open Sans", system-ui, -apple-system, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+  padding: var(--spacing-xl) var(--spacing-s) var(--spacing-xl);
 }
 
-/* Footer */
-footer {
-	margin:var(--spacing-xxl) 0;            /* 4rem (64px) top and bottom */
-    font-size:var(--scale-0);
+.page {
+  width: 100%;
+  max-width: 520px;
+  padding: 0 var(--spacing-m) var(--spacing-xl);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-m);
 }
 
-/* Responsive adjustments */
-@media (max-width:34.375rem) {              /* 550px */
-  h1 {
-	font-size:var(--scale-4);
+.top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0 var(--spacing-xs);
 }
-body {
-	font-size:var(--scale-0);
+
+.top-actions {
+  display: flex;
+  gap: var(--spacing-s);
 }
-.container p {
-	font-size:var(--scale-0);
+
+.action-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--text);
+  font-size: 16px;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 8px 18px rgba(0, 0, 0, 0.25);
 }
+
+.profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-m);
+}
+
+.avatar-frame {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  padding: 7px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.22), rgba(255, 255, 255, 0.05));
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.24), 0 12px 32px rgba(0, 0, 0, 0.35);
+}
+
 .avatar {
-	margin-bottom:var(--spacing-m);
-}
-footer {
-	margin:var(--spacing-xl) 0;         	/* 3rem (48px) top and bottom */
-}
-}
-
-/* Links
-  –––––––––––––––––––––––––––––––––––––––––––––––––– */
-  a {
-	color:#2457F5;
-	text-decoration:underline;
-}
-a:hover {
-	color:#083BDA;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
 }
 
-/* Buttons
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
-.button,button {
-	display:inline-flex;
-	align-items:center;
-	justify-content:center;
-	width:18.75rem;             	/* 300px */
- 	min-height:3rem;                /* 48px */
-  	padding:0.75rem 1rem;         	/* 12px ; 16px */
-  	font-size:1.125rem;           	/* 18px */
-  	font-weight:700;
-	text-decoration:none;
-	white-space:normal;
-  	background-color:var(--button-background,transparent);
-	color:var(--button-text,#000000);
-	border:var(--button-border,none);
-	border-radius:0.5rem;
-	cursor:pointer;
-	box-sizing:border-box;
-	hyphens:auto;               	/* Delete this to remove automatic hyphen on line break */
-  	margin-bottom:1rem;
-	text-align:center;
-	line-height:1.3;
+.handle {
+  margin: 0;
+  font-size: 1.08rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  color: var(--accent);
 }
 
-/* Icons
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
-.icon {
-	width:1.25rem;
-	height:1.25rem;
-	margin-right:0.5rem;
-	flex-shrink:0;
+.social-row {
+  display: flex;
+  gap: var(--spacing-m);
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
-/* Avatar
-  –––––––––––––––––––––––––––––––––––––––––––––––––– */
-.avatar {
-	width: 8rem;             /* 128px */
-	height: 8rem;
-	object-fit: cover;
-	background-position: center;
-	margin-bottom: var(--spacing-l);
+.social-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.04);
+  display: grid;
+  place-items: center;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  transition: transform 0.15s ease;
+}
+
+.social-icon img {
+  width: 20px;
+  height: 20px;
+}
+
+.social-icon:hover {
+  transform: translateY(-2px);
+}
+
+.link-list {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-s);
+  margin-top: var(--spacing-l);
+}
+
+.link-pill {
+  width: 100%;
+  border-radius: var(--radius-pill);
+  border: 1.5px solid var(--pill-border);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.02))
+      var(--pill),
+    var(--pill);
+  color: var(--text);
+  text-decoration: none;
+  padding: var(--spacing-m) var(--spacing-l);
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: var(--spacing-m);
+  align-items: center;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.14), var(--shadow);
+}
+
+.link-pill:hover {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.14), rgba(255, 255, 255, 0.02))
+      var(--pill),
+    var(--pill);
+}
+
+.pill-media {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  display: grid;
+  place-items: center;
+  background: var(--pill-highlight);
+}
+
+.pill-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.pill-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  text-align: center;
+}
+
+.pill-title {
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-size: 0.98rem;
+}
+
+.pill-subtext {
+  color: var(--muted);
+  font-size: 0.88rem;
+  line-height: 1.3;
+}
+
+.pill-ellipsis {
+  font-size: 1.4rem;
+  color: var(--accent);
+  padding-left: var(--spacing-s);
+}
+
+@media (max-width: 480px) {
+  .page {
+    padding: var(--spacing-m);
   }
 
-   /* Modifier for no avatar rounding */
-   .avatar--none {
-	border-radius: 0%;
+  .link-pill {
+    padding: var(--spacing-s) var(--spacing-s);
   }
-
-  /* Modifier for rounded avatar */
-  .avatar--rounded {
-	border-radius: 50%;
-  }
-
-  /* Modifier for slightly rounded corners */
-  .avatar--soft {
-	border-radius: 0.5rem;   /* 8px rounded corners */
-  }
-
-/* Theme System
-  –––––––––––––––––––––––––––––––––––––––––––––––––– */
-/* Light theme is default above */
-
-/* Dark theme */
-:root.theme-dark {
-	color-scheme:dark;
-}
-:root.theme-dark :focus-visible {
-	outline: 2px solid #4899F7;
-	outline-offset: 2px;
-  }
-:root.theme-dark body {
-	background-color:#121212;
-	color:#ffffff;
-}
-:root.theme-dark a:not(.button) {
-	color:#4899F7;
-}
-:root.theme-dark a:not(.button):hover {
-	color:#7AB8FF;
-}
-
-/* Auto theme */
-:root.theme-auto {
-	color-scheme:light dark;
-}
-@media (prefers-color-scheme:dark) {
-	:root.theme-auto body {
-	background-color:#121212;
-	color:#ffffff;
-}
-:root.theme-auto :focus-visible {
-    outline: 2px solid #4899F7;
-    outline-offset: 2px;
-  }
-:root.theme-auto a:not(.button) {
-	color:#4899F7;
-}
-:root.theme-auto a:not(.button):hover {
-	color:#7AB8FF;
-}
-}
-
-/* Button Text Color Override
-    –––––––––––––––––––––––––––––––––––––––––––––––––– */
-    .button:hover,button:hover {
-	color:var(--button-text);
-}
-
-/* Responsive Typography
-  –––––––––––––––––––––––––––––––––––––––––––––––––– */
-  @media (max-width:34.375rem) {            /* 550px */
-    h1 {
-	font-size:2rem;                         /* 32px */
-	}
-	body {
-	font-size:1rem;                    		/* 16px */
-	}
-}
-
-/* Privacy Page Styles
-  –––––––––––––––––––––––––––––––––––––––––––––––––– */
-nav {
-	margin:var(--spacing-l) 0;
-	text-align:left;
-}
-section {
-	margin:var(--spacing-xl) 0;
-	text-align:left;
-}
-h2 {
-	font-size:var(--scale-3);
-	font-weight:700;
-	margin-bottom:var(--spacing-m);
-}
-h3 {
-	font-size:var(--scale-2);
-	font-weight:600;
-	margin:var(--spacing-l) 0 var(--spacing-s) 0;
-}
-ul {
-	list-style:none;
-	padding:0;
-	margin:0 0 var(--spacing-m) 0;
-}
-ul li {
-	margin-bottom:var(--spacing-xs);
-}
-
-/* Privacy page specific responsive adjustments */
-  @media (max-width:34.375rem) {
-	h2 {
-	font-size:var(--scale-2);
-	}
-	h3 {
-	font-size:var(--scale-1);
-	}
-	section {
-	margin:var(--spacing-l) 0;
-	}
-}
-
-/* Font Face Definitions
-  –––––––––––––––––––––––––––––––––––––––––––––––––– */
-@font-face {
-	font-display:swap;
-	font-family:'Open Sans';
-	font-style:normal;
-	font-weight:400;
-	src:url('../fonts/open-sans-v34-vietnamese_latin-ext_latin_hebrew_greek-ext_greek_cyrillic-ext_cyrillic-regular.eot');
-	src:url('../fonts/open-sans-v34-vietnamese_latin-ext_latin_hebrew_greek-ext_greek_cyrillic-ext_cyrillic-regular.eot?#iefix') format('embedded-opentype'),url('../fonts/open-sans-v34-vietnamese_latin-ext_latin_hebrew_greek-ext_greek_cyrillic-ext_cyrillic-regular.woff2') format('woff2'),url('../fonts/open-sans-v34-vietnamese_latin-ext_latin_hebrew_greek-ext_greek_cyrillic-ext_cyrillic-regular.woff') format('woff'),url('../fonts/open-sans-v34-vietnamese_latin-ext_latin_hebrew_greek-ext_greek_cyrillic-ext_cyrillic-regular.ttf') format('truetype'),url('../fonts/open-sans-v34-vietnamese_latin-ext_latin_hebrew_greek-ext_greek_cyrillic-ext_cyrillic-regular.svg#OpenSans') format('svg');
-}
-@font-face {
-	font-display:swap;
-	font-family:'Open Sans';
-	font-style:normal;
-	font-weight:600;
-	src:url('../fonts/open-sans-v34-vietnamese_latin-ext_latin_hebrew_greek-ext_greek_cyrillic-ext_cyrillic-600.eot');
-	src:url('../fonts/open-sans-v34-vietnamese_latin-ext_latin_hebrew_greek-ext_greek_cyrillic-ext_cyrillic-600.eot?#iefix') format('embedded-opentype'),url('../fonts/open-sans-v34-vietnamese_latin-ext_latin_hebrew_greek-ext_greek_cyrillic-ext_cyrillic-600.woff2') format('woff2'),url('../fonts/open-sans-v34-vietnamese_latin-ext_latin_hebrew_greek-ext_greek_cyrillic-ext_cyrillic-600.woff') format('woff'),url('../fonts/open-sans-v34-vietnamese_latin-ext_latin_hebrew_greek-ext_greek_cyrillic-ext_cyrillic-600.ttf') format('truetype'),url('../fonts/open-sans-v34-vietnamese_latin-ext_latin_hebrew_greek-ext_greek_cyrillic-ext_cyrillic-600.svg#OpenSans') format('svg');
-}
-@font-face {
-	font-display:swap;
-	font-family:'Open Sans';
-	font-style:normal;
-	font-weight:700;
-	src:url('../fonts/open-sans-v34-vietnamese_latin-ext_latin_hebrew_greek-ext_greek_cyrillic-ext_cyrillic-700.eot');
-	src:url('../fonts/open-sans-v34-vietnamese_latin-ext_latin_hebrew_greek-ext_greek_cyrillic-ext_cyrillic-700.eot?#iefix') format('embedded-opentype'),url('../fonts/open-sans-v34-vietnamese_latin-ext_latin_hebrew_greek-ext_greek_cyrillic-ext_cyrillic-700.woff2') format('woff2'),url('../fonts/open-sans-v34-vietnamese_latin-ext_latin_hebrew_greek-ext_greek_cyrillic-ext_cyrillic-700.woff') format('woff'),url('../fonts/open-sans-v34-vietnamese_latin-ext_latin_hebrew_greek-ext_greek_cyrillic-ext_cyrillic-700.ttf') format('truetype'),url('../fonts/open-sans-v34-vietnamese_latin-ext_latin_hebrew_greek-ext_greek_cyrillic-ext_cyrillic-700.svg#OpenSans') format('svg');
-}
-@font-face {
-	font-display:swap;
-	font-family:'Open Sans';
-	font-style:normal;
-	font-weight:800;
-	src:url('../fonts/open-sans-v34-vietnamese_latin-ext_latin_hebrew_greek-ext_greek_cyrillic-ext_cyrillic-800.eot');
-	src:url('../fonts/open-sans-v34-vietnamese_latin-ext_latin_hebrew_greek-ext_greek_cyrillic-ext_cyrillic-800.eot?#iefix') format('embedded-opentype'),url('../fonts/open-sans-v34-vietnamese_latin-ext_latin_hebrew_greek-ext_greek_cyrillic-ext_cyrillic-800.woff2') format('woff2'),url('../fonts/open-sans-v34-vietnamese_latin-ext_latin_hebrew_greek-ext_greek_cyrillic-ext_cyrillic-800.woff') format('woff'),url('../fonts/open-sans-v34-vietnamese_latin-ext_latin_hebrew_greek-ext_greek_cyrillic-ext_cyrillic-800.ttf') format('truetype'),url('../fonts/open-sans-v34-vietnamese_latin-ext_latin_hebrew_greek-ext_greek_cyrillic-ext_cyrillic-800.svg#OpenSans') format('svg');
 }
